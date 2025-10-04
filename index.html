@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="Deformable Neural Radiance Fields creates free-viewpoint portraits (nerfies) from casually captured videos.">
+  <meta name="keywords" content="Nerfies, D-NeRF, NeRF">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Alternative neural networks for DeepVariant</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/favicon.png">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+<body>
+
+
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">Alternative neural networks for DeepVariant</h1>
+
+          <!-- LOGOS under the title -->
+         <div class="is-flex is-justify-content-center is-align-items-center mt-3" aria-label="Institutions">
+          <img src="static/images/logo-ispras.png" alt="ISP RAS" style="height:40px;width:auto;">
+          <img src="static/images/logo-skoltech.png" alt="Skoltech" style="height:55px;width:auto;">
+          <img src="static/images/logo-biopolis.jpeg" alt="BIOPOLIS" style="height:60px;width:auto;">
+          <img src="static/images/logo-msu.jpeg" alt="MSU" style="height:50px;width:auto;">
+        </div>
+          <!-- /LOGOS -->
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://scholar.google.com/citations?hl=en&user=0heEt5MAAAAJ" class="author-name">Anastasiia Gurianova</a><sup>1</sup>,</span>
+            <span class="author-block">
+              <a href="" class="author-name">Anastasia Pestruilova</a><sup>1</sup>,</span>
+            <span class="author-block">
+              <a href="https://www.researchgate.net/profile/Aleksandra-Beliaeva-2" class="author-name">Aleksandra Beliaeva</a><sup>1,2</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://scholar.google.com/citations?user=NuQpFq4AAAAJ&hl=en" class="author-name">Artem Kasianov</a><sup>3</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://www.linkedin.com/in/liudmila-mikhailova-48a89b33/" class="author-name">Liudmila Mikhailova</a><sup>4</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://scholar.google.com/citations?user=bPHdTxkAAAAJ&hl=en" class="author-name">Egor Guguchkin</a><sup>1</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://scholar.google.com/citations?user=QvRVASoAAAAJ&hl=en" class="author-name">Evgeny Karpulevich</a><sup>1</sup>
+            </span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup><b>ISP RAS</b>, Moscow, Russia</span>
+            <span class="author-block"><sup>2</sup><b>Skoltech</b>, Moscow, Russia</span><br>
+            <span class="author-block"><sup>3</sup><b>BIOPOLIS</b>, Vairão, Portugal</span>
+            <span class="author-block"><sup>4</sup><b>MSU</b>, Moscow, Russia</span>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <a href=""
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href="https://github.com/ispras/deepvariant_alternative_models"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <br>
+          <p>
+            Google DeepVariant pipeline for variant calling diverged from traditional statistic‑based 
+            methods by rethinking task as an image‑classification problem well suited to convolutional neural networks.  
+            Despite broad adoption and steady evolution, most of DeepVariant improvements have been focused on expanding and refining training data. 
+            Surprisingly there have been no efforts to modify baseline <strong>Inception V3</strong> neural network at the core of pipeline – despite rapid advances in image-classification field. 
+            We for the first time adapted DeepVariant pipeline to use alternative neural networks and, as a proof of concept, tested whether replacing DeepVariant’s original model could improve variant calling accuracy.
+            </p>
+
+          <!-- IMAGE-->
+          <div class="is-flex is-justify-content-center is-align-items-center mt-3" aria-label="Institutions">
+              <img src="static/images/img1.png" style="height:350px;width:auto;">
+          </div>
+          <!-- /IMAGE-->
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+
+    <p></p>
+    <br><br><br>
+    <p></p>
+
+    <!-- Results. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Results</h2>
+          <div style="display: flex; align-items: center; justify-content: space-between; gap: 20px; margin-top: 20px;">
+            <!-- Left side: Text -->
+            <div style="flex: 1; text-align: justify;">
+              <br>
+              <p>
+                We extended original training pipeline to support alternative neural networks 
+                and selected a representative model to showcase their potential. 
+                Model choice was primarily aimed at balancing accuracy and computational efficiency, 
+                so mid-sized <strong>EfficientNet-B3</strong>, which offers a strong accuracy gain 
+                while maintaining a favorable size and GPU time, was chosen as a suitable candidate 
+                for training and integration into the DeepVariant pipeline.
+              </p>
+              <p></p>
+            </div>
+
+            <!-- Right side: Image -->
+            <div style="flex-shrink: 0;">
+              <br>
+                <img src="static/images/img2.png"  style="height:200px; width:auto;">
+            </div>
+          </div>
+
+
+          <div style="display: flex; align-items: center; justify-content: space-between; gap: 20px; margin-top: 20px;">
+            <!-- Left side: Image -->
+            <div style="flex-shrink: 0;">
+              <br>
+              <img src="static/images/img3.png" style="height:160px; width:auto;">
+            </div>
+
+            <!-- Right side: Text -->
+            <div style="flex: 1; text-align: justify;">
+              <br>
+              <p>
+                Training and testing were implemented on a downsampled Genome in a Bottle (GIAB) dataset, 
+                following the original pipeline. Proposed alternative model, with a twofold reduction in parameters and shorter training time, 
+                exhibits more stable convergence and generalization. On an independent test set, this trend persists with F1-score gains 
+                of 0.1% for SNPs and 0.2% for indels, enabling detection of up to <b>several hundred additional true variants per genome</b>.
+              </p>
+              <p>
+              </p>
+            </div>
+          </div>
+
+          <div class="content has-text-justified">
+          <p></p>
+          <br>
+          <p>
+            Case we present, we hope, will contribute to rethinking current practices in genomic variant calling pipelines 
+            by leveraging well-designed models rather than relying solely on scaling legacy architectures with ever-larger volumes of training data.
+            We believe that exploring advanced neural network designs could improve accuracy, robustness, and efficiency of variant calling.
+            </p>
+          </div>
+      </div>
+    </div>
+    <!--/ Results. -->
+  </div>
+</section>
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="content has-text-centered">
+    </div>
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            This website is licensed under a <a rel="license"
+                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
